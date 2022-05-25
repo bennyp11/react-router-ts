@@ -1,24 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Outlet, Link } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ 
+      borderBottom: "solid 1px",
+      paddingBottom: "1rem",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      margin: "auto"
+    }}>
+      <h1>Welcome to the React-Router!</h1>
+      <h2 style={{marginTop: "10vh"}}>These links will send you to different pages!</h2>
+      <nav style={{marginTop: "10vh"}}>
+          <Link to="/page1"> Page 1 </Link> |  {" "}
+          <Link to="/page2"> Page 2 </Link> |  {" "}
+          <Link to="/page3"> Page 3 </Link>
+      </nav>
+      <Outlet />
     </div>
   );
 }
